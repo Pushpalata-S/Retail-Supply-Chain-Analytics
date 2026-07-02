@@ -2,9 +2,9 @@
 
 ## 📌 Project Overview
 
-This project analyzes a retail supply chain dataset using **MySQL**, **Python**, and **Power BI**. The raw dataset was imported, cleaned, normalized into multiple relational tables, and analyzed using SQL to generate business insights.
+This project analyzes a retail supply chain dataset using **MySQL**,and **Python**. The raw dataset was imported, cleaned, normalized into multiple relational tables, and analyzed using SQL to generate business insights.
 
-The project demonstrates an end-to-end data analytics workflow including data ingestion, database design, SQL analysis, query optimization, and dashboard preparation.
+The project demonstrates an end-to-end data analytics workflow including data ingestion, database design, SQL analysis, and query optimization
 
 ---
 
@@ -16,7 +16,6 @@ The project demonstrates an end-to-end data analytics workflow including data in
 - Apply advanced SQL concepts such as CTEs and Window Functions
 - Optimize queries using indexes
 - Create reusable SQL Views
-- Build an interactive Power BI dashboard
 
 ---
 
@@ -27,7 +26,6 @@ The project demonstrates an end-to-end data analytics workflow including data in
 - Python 3
 - Pandas
 - SQL
-- Power BI
 - Git & GitHub
 
 ---
@@ -42,8 +40,6 @@ Retail-Supply-Chain-Analytics/
 │   ├── Data_Dictionary.md
 │   ├── Business_Insights.md
 │   └── ER_Diagram.png
-│
-├── powerbi/
 │
 ├── python/
 │   └── import_data.py
@@ -176,4 +172,4 @@ docs/Data_Dictionary.md
 
 **Pushplata**
 
-Data Analytics | SQL | Python | Power BI
+Data Analytics | SQL | Python 
