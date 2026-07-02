@@ -1,0 +1,39 @@
+======================================================================
+RETAIL SUPPLY CHAIN ANALYTICS REPORT
+======================================================================
+
+Generated On : 2026-07-02 22:53:17.362057
+
+EXECUTIVE SUMMARY
+----------------------------------------------------------------------
+Total Revenue           : $2,297,201.07
+Total Profit            : $286,397.79
+Profit Margin           : 12.47%
+Average Order Value     : $458.61
+Total Orders            : 5009
+Total Customers         : 793
+Total Products          : 1862
+
+TOP PERFORMERS
+----------------------------------------------------------------------
+Highest Revenue Category : Technology
+Highest Revenue Product  : Canon imageCLASS 2200 Advanced Copier
+Highest Revenue Customer : Sean Miller
+Best Performing Region   : West
+Best Sales Month         : 2017-11
+
+OPERATIONAL METRICS
+----------------------------------------------------------------------
+Average Shipping Days : 34.61
+Average Discount      : 15.62%
+Return Rate           : 8.00%
+
+BUSINESS RECOMMENDATIONS
+----------------------------------------------------------------------
+1. Focus marketing efforts on the best-performing category.
+2. Retain high-value customers using loyalty programs.
+3. Review products with low profit margins.
+4. Investigate regions with lower profitability.
+5. Monitor discounts to maintain healthy profit margins.
+6. Reduce shipping time where possible.
+7. Analyze returned products to reduce return rates.
