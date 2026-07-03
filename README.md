@@ -1,6 +1,3 @@
-<img width="604" height="630" alt="ER Diagram" src="https://github.com/user-attachments/assets/5fb590c1-66a4-4ad1-880a-2fc6ca115608" />
-<img width="604" height="630" alt="ER Diagram" src="https://github.com/user-attachments/assets/42cc4f2c-59a4-49fd-ab98-d661d0814117" />
-<img width="604" height="630" alt="ER Diagram" src="https://github.com/user-attachments/assets/3878da1f-d079-4dcb-9707-a04a3fd5b29d" />
 # 🛒 Retail Supply Chain Analytics
 
 An end-to-end Retail Supply Chain Analytics project demonstrating a complete data analytics workflow using **Python,and MySQL**
@@ -194,10 +191,9 @@ The dataset was normalized into multiple relational tables:
 - Products
 
 The ER Diagram is available in:
-
+<img width="604" height="630" alt="ER Diagram" src="https://github.com/user-attachments/assets/3878da1f-d079-4dcb-9707-a04a3fd5b29d" />
 ```
 docs/ER_Diagram.png
-<img width="604" height="630" alt="ER Diagram" src="https://github.com/user-attachments/assets/9e288516-c2eb-48a3-bacf-ec98c35f6d97" />
 
 ```
 
