@@ -57,18 +57,22 @@ View: Monthly Sales Trend
 */
 
 CREATE OR REPLACE VIEW vw_monthly_sales AS
+
 SELECT
-    YEAR(o.order_date) AS year,
-    MONTH(o.order_date) AS month,
+    oi.order_year,
+    oi.order_month,
+    oi.order_month_name,
     ROUND(SUM(oi.sales),2) AS total_sales,
     ROUND(SUM(oi.profit),2) AS total_profit
-FROM orders o
-JOIN order_items oi
-ON o.order_id = oi.order_id
-GROUP BY
-YEAR(o.order_date),
-MONTH(o.order_date);
 
+FROM order_items oi
+
+GROUP BY
+    oi.order_year,
+    oi.order_month,
+    oi.order_month_name;
+
+--View 4
 SELECT *
 FROM vw_monthly_sales;
 
@@ -85,3 +89,59 @@ GROUP BY p.category;
 
 SELECT *
 FROM vw_category_performance;
+
+/*
+==========================================================
+View: Regional Shipping Performance
+==========================================================
+*/
+
+CREATE OR REPLACE VIEW vw_shipping_performance AS
+
+SELECT
+
+o.region,
+
+ROUND(AVG(oi.shipping_days),2) AS avg_shipping_days,
+
+COUNT(*) AS total_orders
+
+FROM orders o
+
+JOIN order_items oi
+ON o.order_id = oi.order_id
+
+GROUP BY o.region;
+
+SELECT *
+FROM vw_shipping_performance;
+
+/*
+==========================================================
+Indexes for Query Optimization
+==========================================================
+*/
+
+-- Customer Lookup
+CREATE INDEX idx_orders_customer
+ON orders(customer_id);
+
+-- Product Lookup
+CREATE INDEX idx_orderitems_product
+ON order_items(product_id);
+
+-- Order Lookup
+CREATE INDEX idx_orderitems_order
+ON order_items(order_id);
+
+-- Category Lookup
+CREATE INDEX idx_products_category
+ON products(category);
+
+-- Date Lookup
+CREATE INDEX idx_orders_orderdate
+ON orders(order_date);
+
+-- Region Lookup
+CREATE INDEX idx_orders_region
+ON orders(region);

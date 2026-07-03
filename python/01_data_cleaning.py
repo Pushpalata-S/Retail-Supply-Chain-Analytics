@@ -36,23 +36,49 @@ print("\nColumn names standardized.")
 # Remove Duplicate Rows
 # ======================================================
 
+rows_before = len(df)
+
 duplicates = df.duplicated().sum()
 
-print(f"\nDuplicate Rows Before: {duplicates}")
+print(f"\nRows Before Cleaning      : {rows_before}")
+print(f"Duplicate Rows Found      : {duplicates}")
 
 df = df.drop_duplicates()
 
-print(f"Rows After Removing Duplicates: {len(df)}")
+rows_after_duplicates = len(df)
+
+print(f"Rows After Removing Duplicates : {rows_after_duplicates}")
 
 # ======================================================
-# Missing Values
+# Handle Missing Values
 # ======================================================
 
-print("\nMissing Values:")
+print("\nMissing Values Before Cleaning:\n")
 
-missing = df.isnull().sum()
+missing_before = df.isnull().sum()
 
-print(missing[missing > 0])
+print(missing_before[missing_before > 0])
+
+# Example Cleaning
+
+if "postal_code" in df.columns:
+    df["postal_code"] = df["postal_code"].fillna("Unknown")
+
+if "returned" in df.columns:
+    df["returned"] = df["returned"].fillna("No")
+
+# Numeric Columns → Median
+
+numeric_cols = df.select_dtypes(include=["int64", "float64"]).columns
+
+for col in numeric_cols:
+    df[col] = df[col].fillna(df[col].median())
+
+missing_after = df.isnull().sum()
+
+print("\nMissing Values After Cleaning:\n")
+
+print(missing_after[missing_after > 0])
 
 # ======================================================
 # Convert Dates
@@ -71,6 +97,30 @@ for col in date_columns:
     )
 
 print("\nDate columns converted.")
+
+for col in date_columns:
+    invalid_dates = df[col].isna().sum()
+    print(f"Invalid dates in {col}: {invalid_dates}")
+
+# ======================================================
+# Remove Invalid Records
+# ======================================================
+
+rows_before_validation = len(df)
+
+if "sales" in df.columns:
+    df = df[df["sales"] >= 0]
+
+if "profit" in df.columns:
+    df = df[df["profit"] >= 0]
+
+if "quantity" in df.columns:
+    df = df[df["quantity"] > 0]
+
+rows_after_validation = len(df)
+
+print("\nInvalid Records Removed :",
+      rows_before_validation - rows_after_validation)
 
 # ======================================================
 # Remove Leading / Trailing Spaces
@@ -117,6 +167,20 @@ print(df.isnull().sum())
 print("\nDataset Info\n")
 
 print(df.info())
+
+# ======================================================
+# Cleaning Summary
+# ======================================================
+
+print("\n" + "=" * 50)
+print("Cleaning Summary")
+print("=" * 50)
+
+print(f"Initial Rows              : {initial_rows}")
+print(f"Initial Columns           : {initial_columns}")
+print(f"Duplicate Rows Removed    : {duplicates}")
+print(f"Final Rows                : {len(df)}")
+print(f"Columns Standardized      : {len(df.columns)}")
 
 # ======================================================
 # Save Clean Dataset
