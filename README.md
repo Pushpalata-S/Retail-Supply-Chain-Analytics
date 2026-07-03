@@ -1,8 +1,8 @@
 # 🛒 Retail Supply Chain Analytics
 
-An end-to-end Retail Supply Chain Analytics project demonstrating a complete data analytics workflow using **Python, MySQL, and Power BI**.
+An end-to-end Retail Supply Chain Analytics project demonstrating a complete data analytics workflow using **Python,and MySQL**
 
-The project covers **data preparation, database design, business analytics, advanced SQL, query optimization, and dashboard-ready data generation** to transform raw retail sales data into actionable business insights.
+The project covers **data preparation, database design, business analytics, advanced SQL,and query optimization** to transform raw retail sales data into actionable business insights.
 
 ---
 
@@ -22,7 +22,6 @@ The workflow includes:
 - SQL-based Business Analytics
 - Advanced SQL Techniques
 - Query Optimization
-- Dashboard-ready output for Power BI
 
 ---
 
@@ -37,7 +36,6 @@ The workflow includes:
 - Apply advanced SQL concepts
 - Optimize query performance using indexes
 - Create reusable SQL Views
-- Build a Power BI dashboard (Upcoming)
 
 ---
 
@@ -48,7 +46,6 @@ The workflow includes:
 - MySQL 8
 - MySQL Workbench
 - SQL
-- Power BI
 - Git
 - GitHub
 
@@ -86,8 +83,6 @@ Retail-Supply-Chain-Analytics/
 │   ├── 08_region_analysis.sql
 │   ├── 09_advanced_sql.sql
 │   └── 10_views_indexes.sql
-│
-├── powerbi/
 │
 ├── reports/
 │
@@ -134,7 +129,7 @@ Power BI Dashboard
 
 ---
 
-# 🐍 Python Workflow
+#  Python Workflow
 
 Python was used for **data preparation** before SQL analysis.
 
@@ -359,7 +354,7 @@ The repository includes screenshots of:
 
 # 🚀 Future Improvements
 
-- Build an interactive Power BI dashboard
+- Build an interactive dashboard
 - Automate ETL pipeline
 - Add Stored Procedures
 - Add SQL Triggers
