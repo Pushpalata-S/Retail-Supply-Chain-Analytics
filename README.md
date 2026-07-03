@@ -1,4 +1,5 @@
 # 🛒 Retail Supply Chain Analytics
+An End-to-End SQL Business Case Study using MySQL,and Python.
 
 ## 📌 Project Overview
 
