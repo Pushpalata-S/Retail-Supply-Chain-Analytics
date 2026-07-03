@@ -1,62 +1,97 @@
 # 🛒 Retail Supply Chain Analytics
-An End-to-End SQL Business Case Study using MySQL,and Python.
 
-## 📌 Project Overview
+An end-to-end Retail Supply Chain Analytics project demonstrating a complete data analytics workflow using **Python, MySQL, and Power BI**.
 
-This project analyzes a retail supply chain dataset using **MySQL**,and **Python**. The raw dataset was imported, cleaned, normalized into multiple relational tables, and analyzed using SQL to generate business insights.
-
-The project demonstrates an end-to-end data analytics workflow including data ingestion, database design, SQL analysis, and query optimization
+The project covers **data preparation, database design, business analytics, advanced SQL, query optimization, and dashboard-ready data generation** to transform raw retail sales data into actionable business insights.
 
 ---
 
-## 🎯 Objectives
+# 📌 Project Overview
 
-- Import raw retail sales data into MySQL
-- Normalize the database into relational tables
+Retail businesses generate large volumes of transactional data every day. However, raw data is often inconsistent, contains missing values, and is not immediately suitable for business analysis.
+
+This project demonstrates how raw retail sales data can be transformed into meaningful business insights through a structured analytics pipeline.
+
+The workflow includes:
+
+- Data Cleaning using Python
+- Data Validation
+- Feature Engineering
+- Exporting SQL-ready datasets
+- Relational Database Design
+- SQL-based Business Analytics
+- Advanced SQL Techniques
+- Query Optimization
+- Dashboard-ready output for Power BI
+
+---
+
+# 🎯 Project Objectives
+
+- Clean and prepare raw retail sales data using Python
+- Validate data quality before database import
+- Engineer new analytical features
+- Design a normalized relational database
+- Import prepared data into MySQL
 - Perform business analysis using SQL
-- Apply advanced SQL concepts such as CTEs and Window Functions
-- Optimize queries using indexes
+- Apply advanced SQL concepts
+- Optimize query performance using indexes
 - Create reusable SQL Views
+- Build a Power BI dashboard (Upcoming)
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Technologies Used
 
-- MySQL 8
-- MySQL Workbench
 - Python 3
 - Pandas
+- MySQL 8
+- MySQL Workbench
 - SQL
-- Git & GitHub
+- Power BI
+- Git
+- GitHub
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 Retail-Supply-Chain-Analytics/
 │
 ├── data/
+│   ├── raw/
+│   ├── cleaned/
+│   └── sql_ready/
+│
 ├── docs/
+│   ├── Business_Recommendations.md
 │   ├── Data_Dictionary.md
-│   ├── Business_Insights.md
 │   └── ER_Diagram.png
 │
 ├── python/
-│   └── import_data.py
-│
-├── screenshots/
+│   ├── 01_data_cleaning.py
+│   ├── 02_data_validation.py
+│   ├── 03_feature_engineering.py
+│   └── 04_export_sql.py
 │
 ├── sql/
 │   ├── 01_database_setup.sql
-│   ├── 02_import_data.sql
+│   ├── 02_data_import.sql
 │   ├── 03_data_profiling.sql
-│   ├── 04_data_quality.sql
-│   ├── 05_normalization.sql
-│   ├── 06_business_analysis.sql
-│   ├── 07_advanced_sql.sql
-│   ├── 08_views.sql
-│   └── 09_indexes.sql
+│   ├── 04_kpi_analysis.sql
+│   ├── 05_sales_analysis.sql
+│   ├── 06_customer_analysis.sql
+│   ├── 07_product_analysis.sql
+│   ├── 08_region_analysis.sql
+│   ├── 09_advanced_sql.sql
+│   └── 10_views_indexes.sql
+│
+├── powerbi/
+│
+├── reports/
+│
+├── screenshots/
 │
 ├── README.md
 └── requirements.txt
@@ -64,15 +99,101 @@ Retail-Supply-Chain-Analytics/
 
 ---
 
-## 🗄️ Database Schema
+# 🔄 Project Workflow
 
-The raw dataset was normalized into the following tables:
+```
+Raw Retail Dataset
+        │
+        ▼
+Python
+──────────────────────────
+✔ Data Cleaning
+✔ Data Validation
+✔ Feature Engineering
+✔ SQL-ready Export
+──────────────────────────
+        │
+        ▼
+MySQL Database
+──────────────────────────
+✔ Database Design
+✔ Data Profiling
+✔ KPI Analysis
+✔ Sales Analysis
+✔ Customer Analysis
+✔ Product Analysis
+✔ Regional Analysis
+✔ Advanced SQL
+✔ Views
+✔ Indexes
+──────────────────────────
+        │
+        ▼
+Power BI Dashboard
+```
 
-- customers
-- products
-- orders
-- order_items
-- locations
+---
+
+# 🐍 Python Workflow
+
+Python was used for **data preparation** before SQL analysis.
+
+## 1️⃣ Data Cleaning
+
+- Standardized column names
+- Removed duplicate records
+- Handled missing values
+- Converted date columns
+- Removed unnecessary whitespaces
+- Cleaned categorical values
+
+---
+
+## 2️⃣ Data Validation
+
+Performed quality checks including:
+
+- Missing value analysis
+- Duplicate detection
+- Invalid records
+- Date validation
+- Data type verification
+- Numeric range validation
+
+---
+
+## 3️⃣ Feature Engineering
+
+Created new analytical columns including:
+
+- Order Year
+- Order Month
+- Month Name
+- Quarter
+- Weekday
+- Shipping Days
+- Profit Margin
+- Loss Order Flag
+- High Discount Flag
+
+These engineered features were later used in SQL analysis.
+
+---
+
+## 4️⃣ Export
+
+Prepared and exported the final SQL-ready dataset for database import.
+
+---
+
+# 🗄️ Database Design
+
+The dataset was normalized into multiple relational tables:
+
+- Customers
+- Orders
+- Order Items
+- Products
 
 The ER Diagram is available in:
 
@@ -82,44 +203,82 @@ docs/ER_Diagram.png
 
 ---
 
-## 📊 SQL Analysis
+# 📊 SQL Analysis
 
-The project includes analysis on:
+The SQL project is divided into multiple analytical modules.
 
-### Executive KPIs
+---
+
+## 📌 Data Profiling
+
+- Dataset Overview
+- Table Structure
+- Record Counts
+- Distinct Categories
+- Distinct Customers
+- Date Range
+- Data Exploration
+
+---
+
+## 📌 Executive KPIs
 
 - Total Revenue
 - Total Profit
 - Total Orders
 - Total Customers
 - Average Order Value
+- Profit Margin
+- Average Discount
 
-### Customer Analytics
+---
 
-- Top Customers by Revenue
-- Top Customers by Profit
-- Customer Lifetime Value
+## 📌 Sales Analysis
 
-### Product Analytics
+- Monthly Sales Trend
+- Monthly Profit Trend
+- Quarterly Sales
+- Yearly Revenue
+- Yearly Profit
+- Highest Sales Month
+- Highest Profit Month
 
-- Best Selling Products
+---
+
+## 📌 Customer Analysis
+
+- Top Customers
+- Revenue Ranking
+- Customer Spending
+- Customer Contribution
+
+---
+
+## 📌 Product Analysis
+
+- Highest Revenue Products
 - Most Profitable Products
+- Least Profitable Products
 - Category Performance
+- Sub-category Performance
+- Discount Analysis
 
-### Regional Analytics
+---
+
+## 📌 Regional Analysis
 
 - Sales by Region
 - Profit by Region
-- Top Performing Cities
+- State Performance
+- City Performance
+- Regional Revenue Contribution
+- Shipping Performance
 
-### Time Series Analysis
+---
 
-- Monthly Sales
-- Running Revenue
-- Moving Average
-- Previous Day vs Next Day Sales
+# 🚀 Advanced SQL Concepts
 
-### Advanced SQL
+The project demonstrates advanced SQL techniques including:
 
 - Common Table Expressions (CTEs)
 - Window Functions
@@ -128,49 +287,91 @@ The project includes analysis on:
 - ROW_NUMBER()
 - LAG()
 - LEAD()
+- Running Totals
+- Moving Average
+- PARTITION BY
 
 ---
 
-## ⚡ Query Optimization
+# ⚡ Query Optimization
 
-Indexes were created on frequently queried columns to improve query performance.
+To improve database performance:
 
-Execution plans were analyzed using the EXPLAIN statement.
-
----
-
-## 📈 Business Insights
-
-Key findings are documented in:
-
-```
-docs/Business_Insights.md
-```
+- Created indexes on frequently queried columns
+- Optimized JOIN operations
+- Used EXPLAIN to analyze query execution plans
 
 ---
 
-## 📖 Data Dictionary
+# 📈 SQL Views
 
-Table descriptions are available in:
+Reusable SQL Views were created for:
+
+- Customer Sales Summary
+- Product Performance
+- Monthly Sales
+- Category Performance
+- Shipping Performance
+
+---
+
+# 💡 Business Recommendations
+
+Based on the analysis, the following recommendations were identified:
+
+- Focus marketing efforts on high-performing product categories.
+- Improve profitability of low-margin products.
+- Expand operations in high-performing regions.
+- Strengthen customer retention through loyalty programs.
+- Optimize discount strategies to improve profit margins.
+- Improve logistics in regions with longer shipping times.
+- Plan inventory based on seasonal sales trends.
+- Monitor return rates to reduce operational losses.
+
+---
+
+# 📖 Documentation
+
+Additional documentation includes:
+
+- Data Dictionary
+- ER Diagram
+- Business Recommendations
+
+Located in:
 
 ```
-docs/Data_Dictionary.md
+docs/
 ```
 
 ---
 
-## 🚀 Future Improvements
+# 📷 Project Screenshots
 
+The repository includes screenshots of:
+
+- Database Schema
+- SQL Query Outputs
+- Power BI Dashboard
+- ER Diagram
+
+---
+
+# 🚀 Future Improvements
+
+- Build an interactive Power BI dashboard
+- Automate ETL pipeline
 - Add Stored Procedures
 - Add SQL Triggers
-- Create ETL automation
-- Deploy Power BI Dashboard
-- Integrate with cloud database
+- Connect to Cloud Database
+- Perform Forecasting using Python
 
 ---
 
-## 👨‍💻 Author
+# 👩‍💻 Author
 
 **Pushplata**
 
-Data Analytics | SQL | Python 
+Aspiring Data Analyst
+
+**Skills:** SQL • Python • Power BI • Excel • Data Visualization
